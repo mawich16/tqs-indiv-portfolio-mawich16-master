@@ -1,0 +1,82 @@
+{
+  "id": "2e34e487-082a-418b-9781-b18e0d72d96c",
+  "version": "2.0",
+  "name": "lab5.2",
+  "url": "https://blazedemo.com",
+  "tests": [{
+    "id": "fae41bcd-b0aa-4eb5-b21a-da648a36b982",
+    "name": "teste1",
+    "commands": [{
+      "id": "b4140431-ede0-426c-ad56-01856959fec7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af5a276d-2b1c-4845-87bd-e0f500711acc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1171",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "223ae0c9-d0af-4e4e-bb47-f1a03ccbd90d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Find Flights']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fa0a7e9-9b1f-4795-aa64-9152caa16418",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .btn",
+      "targets": [
+        ["css=tr:nth-child(1) .btn", "css:finder"],
+        ["xpath=//input[@value='Choose This Flight']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7dfd839a-0ab7-4e05-ac58-11b05127f5b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Purchase Flight']", "xpath:attributes"],
+        ["xpath=//div[11]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "352905f7-2727-451d-90dc-f223063f4a9c",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "BlazeDemo Confirmation",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8884c61b-9eed-47c1-81c2-fda6360e1cce",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "48546c83-19d5-430c-b577-b01ec23a7bc2",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["fae41bcd-b0aa-4eb5-b21a-da648a36b982"]
+  }],
+  "urls": ["https://blazedemo.com/"],
+  "plugins": []
+}

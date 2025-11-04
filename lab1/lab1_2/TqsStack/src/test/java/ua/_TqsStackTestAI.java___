@@ -1,0 +1,80 @@
+package ua;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+
+import java.util.NoSuchElementException;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class TqsStackTest {
+
+    private TqsStack<String> stack;
+
+    @BeforeEach
+    void setUp() {
+        stack = new TqsStack<>();
+    }
+
+    @Test
+    @DisplayName("A new stack should be empty")
+    void testNewStackIsEmpty() {
+        assertTrue(stack.isEmpty());
+        assertEquals(0, stack.size());
+    }
+
+    @Test
+    @DisplayName("Push adds elements and increases size")
+    void testPush() {
+        stack.push("A");
+        stack.push("B");
+        assertEquals(2, stack.size());
+        assertFalse(stack.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Pop returns last pushed element and decreases size")
+    void testPop() {
+        stack.push("A");
+        stack.push("B");
+        String popped = stack.pop();
+        assertEquals("B", popped);
+        assertEquals(1, stack.size());
+    }
+
+    @Test
+    @DisplayName("Peek returns last pushed element without removing it")
+    void testPeek() {
+        stack.push("A");
+        stack.push("B");
+        String top = stack.peek();
+        assertEquals("B", top);
+        assertEquals(2, stack.size());
+    }
+
+    @Test
+    @DisplayName("Pop throws exception when stack is empty")
+    void testPopEmptyThrows() {
+        assertThrows(NoSuchElementException.class, () -> stack.pop());
+    }
+
+    @Test
+    @DisplayName("Peek throws exception when stack is empty")
+    void testPeekEmptyThrows() {
+        assertThrows(NoSuchElementException.class, () -> stack.peek());
+    }
+
+    @Test
+    @DisplayName("Multiple pushes and pops work in LIFO order")
+    void testLifoOrder() {
+        stack.push("first");
+        stack.push("second");
+        stack.push("third");
+
+        assertEquals("third", stack.pop());
+        assertEquals("second", stack.pop());
+        assertEquals("first", stack.pop());
+        assertTrue(stack.isEmpty());
+    }
+}
